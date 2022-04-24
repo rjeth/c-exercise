@@ -1,27 +1,25 @@
+#include <string>
 #include <iostream>
 using namespace std;
-// Driver Code
 int main()
 {
-    string str = "aso";
-    string rev = "";
-    
-  for(int i=str.length()-1; i>=0; i--){
-        //if the character is in upper case, transform it to lower case
-        if(str[i]>=65 && str[i]<=90)
-            str[i] = str[i]+32;
-            
-        //assign the character to reverse string variable
-        rev +=str[i];
+    string greeting = "Race car";
+    int len = greeting.length();
+    int n = len - 1;
+    string reverse = greeting;
+    for (int i = 0; i < (len / 2); i++)
+    {
+        //remove space and upper case to lower case
+        // Using temp to store the char value at index i so
+        // you can swap it in later for char value at index n
+        char temp = reverse[i];
+        reverse[i] = reverse[n];
+        reverse[n] = temp;
+        n = n - 1;
     }
-    
-    cout << rev << endl;
-    if (rev == str) {
-        cout <<  "Word is a Palindrome";
-    }
-    // Otherwise
-    else {
-        cout <<  "Word is not a Palindrome";
-    }
-    return 0;
+    cout << reverse << endl;
+    if (reverse == greeting)
+        cout << "is a palindrome.\n";
+    else
+        cout << "is NOT a palindrome.\n";
 }

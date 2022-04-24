@@ -1,18 +1,30 @@
-#include<iostream>
+// Binary to Decimal
+#include <iostream>
+#include <cstring>
 using namespace std;
 int main()
 {
-    int binnum, decnum=0, i=1, rem;
-    cout<<"Enter any Binary Number: ";
-    cin>>binnum;
-    while(binnum!=0)
+    char binary[8];
+    int decimal = 0, i = 1, rem;
+    cout << "Enter a Number: ";
+    cin >> binary;
+    
+    int binarysize = strlen(binary);
+    
+    if (binarysize >= 8)
     {
-        rem = binnum%10;
-        decnum = decnum + (rem*i);
-        i = i*2;
-        binnum = binnum/10;
+        cout << "Max allowed 8bits only";
     }
-    cout<<"\nEquivalent Decimal Value = "<<decnum;
-    cout<<endl;
-    return 0;
+    else
+    {
+        int bin = stoi(binary);
+        while (bin != 0)
+        {
+            rem = bin % 10;
+            decimal = decimal + (rem * i);
+            i = i * 2;
+            bin = bin / 10;
+        }
+        cout << decimal << endl;
+    }
 }
