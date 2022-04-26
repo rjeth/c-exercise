@@ -5,11 +5,18 @@ int main()
 {
     string boyname, girlname, boytemp, girltemp;
     int total;
-    cout << "F-L-A-M-E-S\n\n";
-    cout << "Enter Boy Name:";
-    cin >> boyname;
+    string flames[6] = {"F - Friend", "L - Love", "A - Angry", "M - Marry", "E - Enemy", "S - Sweetheart"};
+
+    for (int f = 0; f < 6; f++)
+    {
+        cout << flames[f] << endl;
+    }
+
+    cout << endl
+         << "Enter Boy Name:";
+  getline(cin,boyname);
     cout << "Enter Girl Name:";
-    cin >> girlname;
+    getline(cin,girltemp);
 
     boytemp = boyname;
     girltemp = girlname;
@@ -26,17 +33,17 @@ int main()
             if (a == tolower(girltemp[j]) && a != ' ')
             {
                 count1++;
-                girltemp[j] = '*';
+               
             }
 
             if (b == tolower(boytemp[j]) && b != ' ')
             {
                 count2++;
-                boytemp[j] = '*';
+               
             }
         }
     }
-
+    total = count1 + count2;
     while (total > 6)
     {
         total -= 6;
@@ -45,25 +52,25 @@ int main()
     switch (total)
     {
     case 1:
-        cout << "are only Friends";
+        cout << flames[0];
         break;
     case 2:
-        cout << "are only Love";
+        cout << flames[1];
         break;
     case 3:
-        cout << "are only Angery";
+        cout << flames[2];
         break;
     case 4:
-        cout << "are only Marry";
+        cout << flames[3];
         break;
     case 5:
-        cout << "are only Enemy";
+        cout << flames[4];
         break;
     case 6:
-        cout << "are only Sweetheart";
+        cout << flames[5];
         break;
     default:
-        cout << "NOT COMPATIBLE, TRY ANOTHER PAIR/PERSONS";
+        cout << "Not Compatible";
     }
     return 0;
 }
