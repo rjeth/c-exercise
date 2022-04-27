@@ -4,20 +4,19 @@
 using namespace std;
 int main()
 {
-    char binary[8];
+    char binary[9];
     int decimal = 0, i = 1, rem;
     cout << "Enter a Number: ";
     cin >> binary;
-    
     int binarysize = strlen(binary);
     
-    if (binarysize >= 8)
+    if (binarysize > 8)
     {
         cout << "Max allowed 8bits only";
     }
     else
     {
-        int bin = stoi(binary);
+        int bin = stoi(binary);//string to integer
         while (bin != 0)
         {
             rem = bin % 10;
@@ -25,6 +24,6 @@ int main()
             i = i * 2;
             bin = bin / 10;
         }
-        cout << decimal << endl;
+        cout << "Decimal: " << decimal << endl;
     }
 }

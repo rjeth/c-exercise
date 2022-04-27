@@ -12,6 +12,7 @@ int main()
     }
     else
     {
+        cout << "Binary: ";
         while (decimal != 0)
         {
             binary[i] = decimal % 2;
@@ -22,7 +23,8 @@ int main()
         for (i = (i - 1); i >= 0; i--)
             cout << binary[i];
     }
-}
+} 
+
 
 // Binary to Decimal
 #include <iostream>
